@@ -59,10 +59,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="20" selection-start="415" selection-end="415" vertical-scroll-proportion="0.20642202">
+            <state line="21" column="23" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -77,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UnitTest.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="UnitTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/UnitTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="29" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.32110092">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -519,19 +519,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/UnitTest.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="29" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="21" column="23" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/UnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="415" selection-end="415" vertical-scroll-proportion="0.20642202">
-          <folding />
+        <state line="14" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.32110092">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
