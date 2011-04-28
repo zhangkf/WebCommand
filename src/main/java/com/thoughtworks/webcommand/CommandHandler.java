@@ -1,6 +1,6 @@
 package com.thoughtworks.webcommand;
 
-@RequestMapping("/cmd")
+@RequestMapping(urlPattern = "/cmd")
 public class CommandHandler {
 
     @RequestMapping(method = RequestMethod.GET)
@@ -8,14 +8,17 @@ public class CommandHandler {
         return null;
     }
 
+    @RequestMapping(method = RequestMethod.POST)
     public String update() {
         return null;
     }
 
+    @RequestMapping(method = RequestMethod.PUT)
     public String save() {
         return null;
     }
 
+    @RequestMapping(method = RequestMethod.DELETE)
     public String delete() {
         return null;
     }

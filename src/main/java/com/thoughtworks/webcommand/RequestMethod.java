@@ -1,5 +1,5 @@
 package com.thoughtworks.webcommand;
 
 public enum RequestMethod {
-    GET
+    GET, POST, DELETE, PUT
 }

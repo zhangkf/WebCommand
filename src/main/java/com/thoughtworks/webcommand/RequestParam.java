@@ -1,4 +1,6 @@
 package com.thoughtworks.webcommand;
 
-public interface RequestParam {
+public @interface RequestParam {
+
+    String value();
 }
