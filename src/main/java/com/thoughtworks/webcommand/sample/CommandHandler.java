@@ -1,4 +1,8 @@
-package com.thoughtworks.webcommand;
+package com.thoughtworks.webcommand.sample;
+
+import com.thoughtworks.webcommand.annotation.RequestMapping;
+import com.thoughtworks.webcommand.annotation.RequestMethod;
+import com.thoughtworks.webcommand.annotation.RequestParam;
 
 @RequestMapping(urlPattern = "/cmd")
 public class CommandHandler {

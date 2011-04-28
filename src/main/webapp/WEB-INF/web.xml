@@ -6,4 +6,10 @@
 <web-app>
     <display-name>ContextFW Quickstart</display-name>
 
+    <servlet>
+
+    </servlet>
+    <servlet-mapping>
+
+    </servlet-mapping>
 </web-app>

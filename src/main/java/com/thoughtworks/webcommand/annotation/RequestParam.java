@@ -1,4 +1,4 @@
-package com.thoughtworks.webcommand;
+package com.thoughtworks.webcommand.annotation;
 
 public @interface RequestParam {
 
