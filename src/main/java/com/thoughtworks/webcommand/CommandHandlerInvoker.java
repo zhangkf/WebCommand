@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class CommandHandlerInvoker {
+class CommandHandlerInvoker {
     private Class handlerClass;
 
     CommandHandlerInvoker(Class handlerClass) {
@@ -60,7 +60,11 @@ public class CommandHandlerInvoker {
             Object parameterValue = parameterMap.get(parameterName);
             Class<?> parameterType = parameterTypes[i];
 
-            if(!parameterType.getName().equals(parameterValue.getClass().getName())){
+            if (!parameterType.getName().equals(parameterValue.getClass().getName())) {
+                System.out.println(parameterName);
+                System.out.println(parameterType.getName());
+                System.out.println(parameterValue.getClass().getName());
+
                 throw new ParameterTypeNotMatchException("");
             }
 
