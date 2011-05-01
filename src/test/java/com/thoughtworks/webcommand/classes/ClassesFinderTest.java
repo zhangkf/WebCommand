@@ -1,6 +1,6 @@
 package com.thoughtworks.webcommand.classes;
 
-import com.thoughtworks.webcommand.ClassesFinder;
+import com.thoughtworks.webcommand.CommandHandlerFinder;
 import org.hamcrest.core.Is;
 import org.junit.Test;
 
@@ -18,7 +18,7 @@ public class ClassesFinderTest {
         Class[] classes = new Class[0];
 
         try {
-            classes = new ClassesFinder().getClasses(packageName);
+            classes = new CommandHandlerFinder(packageName).getClasses();
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();

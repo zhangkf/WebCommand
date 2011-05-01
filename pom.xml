@@ -46,7 +46,7 @@
 				<groupId>org.mortbay.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<configuration>
-					<scanIntervalSeconds>5</scanIntervalSeconds>
+					<scanIntervalSeconds>1</scanIntervalSeconds>
                     <stopKey>foo</stopKey>
                     <stopPort>9966</stopPort>
 				</configuration>
