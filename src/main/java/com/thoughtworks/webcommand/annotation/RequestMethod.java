@@ -1,5 +1,6 @@
 package com.thoughtworks.webcommand.annotation;
 
-public enum RequestMethod {
-    GET, POST, DELETE, PUT
+public @interface RequestMethod {
+    String value();
+
 }
