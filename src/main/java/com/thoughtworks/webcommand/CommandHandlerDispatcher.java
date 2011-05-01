@@ -1,29 +1,28 @@
 package com.thoughtworks.webcommand;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-
 import com.thoughtworks.webcommand.annotation.RequestMapping;
 import com.thoughtworks.webcommand.annotation.RequestMethod;
 import com.thoughtworks.webcommand.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 
-public class CommandHandlerDispatcher {
+class CommandHandlerDispatcher {
 
 
     private Class[] handlerClasses;
     private HttpServletRequest request;
 
-    public CommandHandlerDispatcher(HttpServletRequest req, Class[] handlerClasses) {
+    CommandHandlerDispatcher(HttpServletRequest req, Class[] handlerClasses) {
         this.request = req;
         this.handlerClasses = handlerClasses;
     }
 
-    public void dispatch() {
+    void dispatch() {
 
         for (Class handlerClass : handlerClasses) {
             System.out.println("Current Class: " + handlerClass.getName());
@@ -95,7 +94,7 @@ public class CommandHandlerDispatcher {
             Object o = handlerClass.newInstance();
             Object result = method.invoke(o, values.toArray(new Object[0]));
 
-            System.out.println(result.getClass().getName()+": "+result);
+            System.out.println(result.getClass().getName() + ": " + result);
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();

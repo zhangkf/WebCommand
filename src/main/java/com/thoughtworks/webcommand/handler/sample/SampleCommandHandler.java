@@ -4,13 +4,12 @@ import com.thoughtworks.webcommand.annotation.RequestMapping;
 import com.thoughtworks.webcommand.annotation.RequestMethod;
 import com.thoughtworks.webcommand.annotation.RequestParam;
 
-@RequestMapping(urlPattern = "/cmd")
+@RequestMapping(urlPattern = "/sample")
 public class SampleCommandHandler {
 
     @RequestMethod("GET")
-    public String get(@RequestParam("username") String username, @RequestParam("pwd") String pwd) {
-        System.out.println(username);
-        return "zhangkf";
+    public String get(@RequestParam("username") String username, @RequestParam("password") String password) {
+        return username + password;
     }
 
 

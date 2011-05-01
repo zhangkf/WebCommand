@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39c93867-502d-4bac-a7b0-cdf35035f79d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerDispatcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/ClassesFinder.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/sample/CommandHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/handler/sample/SampleCommandHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerInvoker.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerLocator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/MethodNotFoundException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ParameterNotFoundException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ParameterTypeNotMatchException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerFinderTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerInvokerTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerLocatorTest.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/classes/ClassesFinderTest.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerDispatcher.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerDispatcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/DispatchServlet.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/DispatchServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMapping.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMapping.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMethod.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMethod.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestParam.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestParam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/classes/ClassesFinderTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/classes/ClassesFinderTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/handler/sample/SampleCommandHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/handler/sample/SampleCommandHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/UnitTest.java" afterPath="$PROJECT_DIR$/src/test/java/UnitTest.java" />
     </list>
     <ignored path="WebCommand.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,30 +75,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DispatchServlet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/DispatchServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="22" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="42" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CommandHandlerDispatcher.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerDispatcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="34" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.50757575">
+            <state line="24" column="4" selection-start="721" selection-end="721" vertical-scroll-proportion="-1.8368795">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,10 +86,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestParam.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestParam.java">
+      <file leaf-file-name="DispatchServlet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/DispatchServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+            <state line="18" column="27" selection-start="639" selection-end="639" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,19 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <file leaf-file-name="CommandHandlerLocatorTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerLocatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="28" selection-start="430" selection-end="437" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClassesFinderTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/classes/ClassesFinderTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="101" selection-start="730" selection-end="783" vertical-scroll-proportion="0.0">
+            <state line="21" column="34" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,10 +108,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandHandlerFinder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java">
+      <file leaf-file-name="CommandHandlerFinderTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerFinderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="24" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
+            <state line="33" column="18" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandHandlerInvokerTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerInvokerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="49" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ParameterTypeNotMatchException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ParameterTypeNotMatchException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="59" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -145,16 +142,16 @@
       <file leaf-file-name="SampleCommandHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/handler/sample/SampleCommandHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="46" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+            <state line="11" column="34" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestMapping.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMapping.java">
+      <file leaf-file-name="CommandHandlerInvoker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerInvoker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="35" selection-start="134" selection-end="169" vertical-scroll-proportion="0.0">
+            <state line="52" column="35" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,13 +159,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestMethod.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMethod.java">
+      <file leaf-file-name="CommandHandlerLocator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerLocator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="20" selection-start="135" selection-end="171" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="31" column="0" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandHandlerFinder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,21 +191,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/RequestMapping.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/sample/CommandHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/ClassesFinder.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ClassesFinderTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerClassesFinderTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ClassNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/MethodNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/test/java/UnitTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ParameterNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerClassLocatorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerInvoker.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerFinderTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/classes/ClassesFinderTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/DispatchServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMapping.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMethod.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestParam.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/handler/sample/CommandHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerLocatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerLocator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/handler/sample/SampleCommandHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerInvokerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ParameterTypeNotMatchException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerInvoker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerDispatcher.java" />
       </list>
     </option>
@@ -358,7 +362,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
+              <option name="myItemId" value="webcommand" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,7 +518,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="annotation" />
+              <option name="myItemId" value="exception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -545,22 +549,112 @@
       <recent name="com.thoughtworks.webcommand.ClassesFinder" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.thoughtworks.webcommand.exception" />
       <recent name="com.thoughtworks.webcommand" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.thoughtworks.webcommand" />
       <recent name="com.thoughtworks.webcommand.handler.sample" />
       <recent name="com.thoughtworks.webcommand.classes" />
       <recent name="com.thoughtworks.webcommand.annotation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClassesFinderTest.should_find_class_under_package">
-    <configuration default="false" name="ClassesFinderTest.should_find_class_under_package" type="JUnit" factoryName="JUnit" temporary="true">
+  <component name="RunManager" selected="JUnit.UnitTest.should_1_equals_1">
+    <configuration default="false" name="CommandHandlerFinderTest.should_find_class_under_package" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="WebCommand" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.thoughtworks.webcommand.classes" />
-      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.webcommand.classes.ClassesFinderTest" />
+      <option name="PACKAGE_NAME" value="com.thoughtworks.webcommand" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.webcommand.CommandHandlerFinderTest" />
       <option name="METHOD_NAME" value="should_find_class_under_package" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CommandHandlerFinderTest.should_return_empty_array_if_no_class_under_package" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="WebCommand" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.thoughtworks.webcommand" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.webcommand.CommandHandlerFinderTest" />
+      <option name="METHOD_NAME" value="should_return_empty_array_if_no_class_under_package" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CommandHandlerFinderTest.should_reurn_class_array_when_found" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="WebCommand" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.thoughtworks.webcommand" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.webcommand.CommandHandlerFinderTest" />
+      <option name="METHOD_NAME" value="should_reurn_class_array_when_found" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CommandHandlerLocatorTest.should_return_handler_class_if_url_pattern_matches" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="WebCommand" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.thoughtworks.webcommand" />
+      <option name="MAIN_CLASS_NAME" value="com.thoughtworks.webcommand.CommandHandlerLocatorTest" />
+      <option name="METHOD_NAME" value="should_return_handler_class_if_url_pattern_matches" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="UnitTest.should_1_equals_1" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="WebCommand" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UnitTest" />
+      <option name="METHOD_NAME" value="should_1_equals_1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -650,8 +744,12 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="1">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.ClassesFinderTest.should_find_class_under_package" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ClassesFinderTest.should_return_empty_array_if_no_class_under_package" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.CommandHandlerClassesFinderTest.should_reurn_class_array_when_found" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.CommandHandlerClassLocatorTest.should_return_handler_class_if_url_pattern_matches" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UnitTest.should_1_equals_1" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -689,20 +787,20 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329429" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26061493" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" sideWeight="0.670571" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2882818" sideWeight="0.73938507" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1830161" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -744,91 +842,87 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_5.xml">
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/src.jar!/src/java/lang/ClassNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="63" column="11" selection-start="2160" selection-end="2160" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_servlet_api_3_0_7_0_0pre2.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/MethodNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="2" column="45" selection-start="93" selection-end="93" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/Maven__org_mortbay_jetty_jetty_7_0_0_pre5.xml">
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/src.jar!/src/java/util/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="380" selection-end="380" vertical-scroll-proportion="0.0" />
+        <state line="58" column="13" selection-start="2631" selection-end="2631" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/WebCommandFilter.java">
+    <entry file="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home/src.jar!/src/java/util/Enumeration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="30" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0" />
+        <state line="43" column="17" selection-start="1536" selection-end="1536" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UnitTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/classes/ClassesFinderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="101" selection-start="730" selection-end="783" vertical-scroll-proportion="0.0">
+        <state line="15" column="11" selection-start="301" selection-end="301" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ParameterNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="430" selection-end="437" vertical-scroll-proportion="0.0">
+        <state line="4" column="17" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerLocatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="42" selection-start="1408" selection-end="1408" vertical-scroll-proportion="0.0">
+        <state line="21" column="34" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerFinderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="18" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/exception/ParameterTypeNotMatchException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="59" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/DispatchServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/thoughtworks/webcommand/CommandHandlerInvokerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="22" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
+        <state line="80" column="49" selection-start="2635" selection-end="2635" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerInvoker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="24" selection-start="582" selection-end="582" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="35" selection-start="134" selection-end="169" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="135" selection-end="171" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/annotation/RequestParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+        <state line="52" column="35" selection-start="1816" selection-end="1816" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -837,14 +931,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/handler/sample/SampleCommandHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="46" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0">
+        <state line="11" column="34" selection-start="484" selection-end="484" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/DispatchServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="27" selection-start="639" selection-end="639" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerLocator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/webcommand/CommandHandlerDispatcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="34" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.50757575">
+        <state line="24" column="4" selection-start="721" selection-end="721" vertical-scroll-proportion="-1.8368795">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -854,9 +971,81 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="Copyright.UI">
         <settings>
           <splitter-proportions />
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Android</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>WebCommand</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: commons-lang:commons-lang:2.5</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
         </settings>
       </state>
       <state key="ScopeChooserConfigurable.UI">

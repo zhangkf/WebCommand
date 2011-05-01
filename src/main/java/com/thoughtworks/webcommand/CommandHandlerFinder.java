@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public class CommandHandlerFinder {
+class CommandHandlerFinder {
 
     private String packageName;
 
-    public CommandHandlerFinder(String packageName) {
+    CommandHandlerFinder(String packageName) {
         this.packageName = packageName;
     }
 
-    public Class[] getClasses() throws ClassNotFoundException, IOException {
+    Class[] getClasses() throws ClassNotFoundException, IOException {
 
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
         assert classLoader != null;
