@@ -14,17 +14,17 @@ public class SampleCommandHandler {
 
 
     @RequestMethod("POST")
-    public String update() {
-        return null;
+    public String update(@RequestParam("username") String username, @RequestParam("password") String password) {
+        return "update";
     }
 
     @RequestMethod("PUT")
-    public String save() {
-        return null;
+    public String save(@RequestParam("username") String username, @RequestParam("password") String password) {
+        return "put";
     }
 
     @RequestMethod("DELETE")
-    public String delete() {
-        return null;
+    public String delete(@RequestParam("username") String username) {
+        return "deleted";
     }
 }

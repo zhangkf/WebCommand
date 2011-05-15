@@ -11,9 +11,9 @@ public class CommandHandlerFinderTest {
 
 
     @Test
-    public void should_reurn_class_array_when_found() {
+    public void should_reurn_handler_class_array_by_package() {
 
-        String packageName = "com.thoughtworks.webcommand";
+        String packageName = "com.thoughtworks.webcommand.handler.sample";
         Class[] classes = new Class[0];
 
         try {
@@ -26,7 +26,8 @@ public class CommandHandlerFinderTest {
             e.printStackTrace();
         }
 
-        assertThat(classes[0].getName(), is("com.thoughtworks.webcommand.CommandHandlerFinderTest"));
+        assertThat(classes.length, is(1));
+        assertThat(classes[0].getName(), is("com.thoughtworks.webcommand.handler.sample.SampleCommandHandler"));
 
     }
 
