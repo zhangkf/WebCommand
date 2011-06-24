@@ -2,37 +2,28 @@ package com.thoughtworks.webcommand;
 
 import org.junit.Test;
 
-import java.io.IOException;
+import java.util.Set;
 
-import static org.hamcrest.core.Is.*;
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class CommandHandlerFinderTest {
     @Test
-    public void should_return_handler_class_array_by_package() throws IOException, ClassNotFoundException {
-        String packageName = "com.thoughtworks.webcommand.handler.sample";
-        Class[] classes = new CommandHandlerFinder(packageName).getClasses();
+    public void should_return_handler_class_array_by_package() throws Exception {
+        String packageName = "com.thoughtworks.webcommand.handler";
+        Set<Class<?>> classes = new CommandHandlerFinder(packageName).scanPackage();
 
-        assertThat(classes.length, is(1));
-        assertThat(classes[0].getName(), is("com.thoughtworks.webcommand.handler.sample.SamplePostCommandHandler"));
+        assertThat(classes.size(), is(1));
+        assertThat(((Class)classes.toArray()[0]).getName(), is("com.thoughtworks.webcommand.handler.sample.SamplePostCommandHandler"));
 
     }
 
     @Test
-    public void should_return_empty_array_if_no_class_under_package() {
+    public void should_return_empty_array_if_no_class_under_package() throws Exception, ClassNotFoundException {
         String packageName = "com.thoughtworks.webcommand.notexist";
-        Class[] classes = new Class[0];
+        Set<Class<?>> classes = new CommandHandlerFinder(packageName).scanPackage();
 
-        try {
-            classes = new CommandHandlerFinder(packageName).getClasses();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        assertThat(classes.length, is(0));
+        assertThat(classes.size(), is(0));
     }
 
 

@@ -2,19 +2,18 @@ package com.thoughtworks.webcommand;
 
 import com.thoughtworks.webcommand.annotation.WebCommand;
 
-class CommandHandlerLocator {
-    private Class[] handlerClasses;
+import java.util.Set;
 
-    CommandHandlerLocator(Class[] classes) {
+class CommandHandlerLocator {
+    private Set<Class<?>> handlerClasses;
+
+    CommandHandlerLocator(Set<Class<?>> classes) {
         this.handlerClasses = classes;
     }
 
     CommandHandlerInvoker locate(String urlPattern, String httpVerb) throws ClassNotFoundException {
-
         for (Class handlerClass : handlerClasses) {
-
             boolean annotationPresent = handlerClass.isAnnotationPresent(WebCommand.class);
-
             if (annotationPresent) {
                 WebCommand mappingAnnotation = (WebCommand) handlerClass.getAnnotation(WebCommand.class);
                 if (mappingAnnotation.uri().equals(urlPattern) && mappingAnnotation.verb().toString().equals(httpVerb.toUpperCase())) {

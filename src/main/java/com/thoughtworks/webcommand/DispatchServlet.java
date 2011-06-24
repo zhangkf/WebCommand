@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Map;
+import java.util.Set;
 import java.util.logging.Logger;
 
 public class DispatchServlet extends HttpServlet {
@@ -26,11 +27,9 @@ public class DispatchServlet extends HttpServlet {
         String packages = this.getServletConfig().getInitParameter("package");
         logger.info("Get package from web.xml:" + packages);
         try {
-            Class[] handlerClasses = new CommandHandlerFinder(packages).getClasses();
+            Set<Class<?>> handlerClasses = new CommandHandlerFinder(packages).scanPackage();
             commandHandlerLocator = new CommandHandlerLocator(handlerClasses);
-        } catch (ClassNotFoundException e) {
-            logger.throwing("DispatchServlet", "init", e);
-        } catch (IOException e) {
+        } catch (Exception e) {
             logger.throwing("DispatchServlet", "init", e);
         }
     }

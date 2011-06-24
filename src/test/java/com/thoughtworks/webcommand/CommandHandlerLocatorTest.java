@@ -4,8 +4,6 @@ import com.thoughtworks.webcommand.handler.sample.SamplePostCommandHandler;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
-
 import static org.junit.Assert.assertTrue;
 
 public class CommandHandlerLocatorTest {
@@ -13,10 +11,9 @@ public class CommandHandlerLocatorTest {
     public CommandHandlerLocator commandHandlerLocator;
 
     @Before
-    public void setUp() throws IOException, ClassNotFoundException {
+    public void setUp() throws Exception {
         String packageName = "com.thoughtworks.webcommand";
-        Class[] classes = new CommandHandlerFinder(packageName).getClasses();
-        commandHandlerLocator = new CommandHandlerLocator(classes);
+        commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerFinder(packageName).scanPackage());
     }
 
     @Test

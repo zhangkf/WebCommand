@@ -5,7 +5,6 @@ import com.thoughtworks.webcommand.exception.ParameterTypeNotMatchException;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
 
@@ -17,10 +16,10 @@ public class CommandHandlerInvokerTest {
     public CommandHandlerInvoker commandHandlerInvoker;
 
     @Before
-    public void setUp() throws IOException, ClassNotFoundException {
+    public void setUp() throws Exception {
         String packageName = "com.thoughtworks.webcommand";
-        Class[] classes = new CommandHandlerFinder(packageName).getClasses();
-        CommandHandlerLocator commandHandlerLocator = new CommandHandlerLocator(classes);
+        CommandHandlerLocator commandHandlerLocator = new CommandHandlerLocator(
+                new CommandHandlerFinder(packageName).scanPackage());
 
         commandHandlerInvoker = commandHandlerLocator.locate("/sample", "POST");
     }
