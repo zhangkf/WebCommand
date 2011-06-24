@@ -19,26 +19,8 @@ class CommandHandlerInvoker {
         this.handlerClass = handlerClass;
     }
 
-    Method locateMethod(String requestMethod) throws MethodNotFoundException {
-
-        Method[] methods = handlerClass.getMethods();
-        for (Method method : methods) {
-            if (method.isAnnotationPresent(RequestMethod.class)) {
-                RequestMethod methodAnnotation = method.getAnnotation(RequestMethod.class);
-                String methodName = methodAnnotation.value();
-                if (methodName.equals(requestMethod)) {
-                    return method;
-                }
-
-            }
-        }
-
-        throw new MethodNotFoundException("Method not found for request method: " + requestMethod);
-
-
-    }
-
-    Object invokeHandler(Method method, Map parameterMap) throws Exception {
+    Object invokeHandler(String httpVerb, Map parameterMap) throws Exception {
+        Method method = locateMethod(httpVerb);
 
         Annotation[][] parameterAnnotations = method.getParameterAnnotations();
         Class<?>[] parameterTypes = method.getParameterTypes();
@@ -77,5 +59,24 @@ class CommandHandlerInvoker {
         Object result = method.invoke(o, values.toArray(new Object[0]));
 
         return result;
+    }
+
+    private Method locateMethod(String requestMethod) throws MethodNotFoundException {
+
+        Method[] methods = handlerClass.getMethods();
+        for (Method method : methods) {
+            if (method.isAnnotationPresent(RequestMethod.class)) {
+                RequestMethod methodAnnotation = method.getAnnotation(RequestMethod.class);
+                String methodName = methodAnnotation.value();
+                if (methodName.equals(requestMethod)) {
+                    return method;
+                }
+
+            }
+        }
+
+        throw new MethodNotFoundException("Method not found for request method: " + requestMethod);
+
+
     }
 }

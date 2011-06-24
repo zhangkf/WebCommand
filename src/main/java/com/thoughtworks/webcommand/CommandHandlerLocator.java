@@ -17,14 +17,14 @@ class CommandHandlerLocator {
 
             if (annotationPresent) {
                 RequestMapping mappingAnnotation = (RequestMapping) handlerClass.getAnnotation(RequestMapping.class);
-                if (mappingAnnotation.urlPattern().equals(urlPattern)) {
+                if (mappingAnnotation.uri().equals(urlPattern)) {
                     return handlerClass;
                 }
 
             }
         }
 
-        throw new ClassNotFoundException("Handler Class not found for url pattern: " + urlPattern);
+        throw new ClassNotFoundException("No handler register for uri: " + urlPattern);
 
 
     }

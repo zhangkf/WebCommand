@@ -1,5 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AntConfiguration">
+    <defaultAnt bundledAnt="true" />
+  </component>
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="?*.properties" />
+      <entry name="?*.xml" />
+      <entry name="?*.gif" />
+      <entry name="?*.png" />
+      <entry name="?*.jpeg" />
+      <entry name="?*.jpg" />
+      <entry name="?*.html" />
+      <entry name="?*.dtd" />
+      <entry name="?*.tld" />
+      <entry name="?*.ftl" />
+    </wildcardResourcePatterns>
+    <annotationProcessing enabled="false" useClasspath="true" />
+  </component>
+  <component name="CopyrightManager" default="">
+    <module2copyright />
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-target 1.6" />
+  </component>
+  <component name="JavadocGenerationManager">
+    <option name="OUTPUT_DIRECTORY" />
+    <option name="OPTION_SCOPE" value="protected" />
+    <option name="OPTION_HIERARCHY" value="true" />
+    <option name="OPTION_NAVIGATOR" value="true" />
+    <option name="OPTION_INDEX" value="true" />
+    <option name="OPTION_SEPARATE_INDEX" value="true" />
+    <option name="OPTION_DOCUMENT_TAG_USE" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_VERSION" value="false" />
+    <option name="OPTION_DOCUMENT_TAG_DEPRECATED" value="true" />
+    <option name="OPTION_DEPRECATED_LIST" value="true" />
+    <option name="OTHER_OPTIONS" value="" />
+    <option name="HEAP_SIZE" />
+    <option name="LOCALE" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="Palette2">
     <group name="Swing">
       <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.png" removable="false" auto-create-binding="false" can-attach-label="false">
@@ -120,6 +177,130 @@
         <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
       </item>
     </group>
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WebCommand.iml" filepath="$PROJECT_DIR$/WebCommand.iml" />
+    </modules>
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/classes" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="Maven: commons-lang:commons-lang:2.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: junit:junit:4.5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.5/junit-4.5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.mortbay.jetty:jetty-util:7.0.0.pre5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-util/7.0.0.pre5/jetty-util-7.0.0.pre5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-util/7.0.0.pre5/jetty-util-7.0.0.pre5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty-util/7.0.0.pre5/jetty-util-7.0.0.pre5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.mortbay.jetty:jetty:7.0.0.pre5">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty/7.0.0.pre5/jetty-7.0.0.pre5.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty/7.0.0.pre5/jetty-7.0.0.pre5-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/jetty/7.0.0.pre5/jetty-7.0.0.pre5-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.mortbay.jetty:servlet-api-3.0:7.0.0pre2">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/servlet-api-3.0/7.0.0pre2/servlet-api-3.0-7.0.0pre2.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/servlet-api-3.0/7.0.0pre2/servlet-api-3.0-7.0.0pre2-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/servlet-api-3.0/7.0.0pre2/servlet-api-3.0-7.0.0pre2-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.mortbay.jetty:servlet-api:3.0.pre4">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/servlet-api/3.0.pre4/servlet-api-3.0.pre4.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/servlet-api/3.0.pre4/servlet-api-3.0.pre4-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/mortbay/jetty/servlet-api/3.0.pre4/servlet-api-3.0.pre4-sources.jar!/" />
+      </SOURCES>
+    </library>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

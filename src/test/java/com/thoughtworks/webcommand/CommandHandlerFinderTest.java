@@ -8,38 +8,23 @@ import static org.hamcrest.core.Is.*;
 import static org.junit.Assert.assertThat;
 
 public class CommandHandlerFinderTest {
-
-
     @Test
-    public void should_reurn_handler_class_array_by_package() {
-
+    public void should_return_handler_class_array_by_package() throws IOException, ClassNotFoundException {
         String packageName = "com.thoughtworks.webcommand.handler.sample";
-        Class[] classes = new Class[0];
-
-        try {
-            classes = new CommandHandlerFinder(packageName).getClasses();
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Class[] classes = new CommandHandlerFinder(packageName).getClasses();
 
         assertThat(classes.length, is(1));
-        assertThat(classes[0].getName(), is("com.thoughtworks.webcommand.handler.sample.SampleCommandHandler"));
+        assertThat(classes[0].getName(), is("com.thoughtworks.webcommand.handler.sample.SamplePostCommandHandler"));
 
     }
 
-
     @Test
     public void should_return_empty_array_if_no_class_under_package() {
-        String packageName = "com.thoughtworks.webcommand.wrongpackage";
+        String packageName = "com.thoughtworks.webcommand.notexist";
         Class[] classes = new Class[0];
 
         try {
             classes = new CommandHandlerFinder(packageName).getClasses();
-
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
 
@@ -48,7 +33,6 @@ public class CommandHandlerFinderTest {
         }
 
         assertThat(classes.length, is(0));
-
     }
 
 

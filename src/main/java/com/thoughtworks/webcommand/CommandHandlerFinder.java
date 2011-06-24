@@ -29,21 +29,13 @@ class CommandHandlerFinder {
             URL resource = resources.nextElement();
             dirs.add(new File(resource.getFile()));
         }
-        ArrayList<Class> classes = new ArrayList<Class>();
+        List<Class> classes = new ArrayList<Class>();
         for (File directory : dirs) {
             classes.addAll(findClasses(directory, packageName));
         }
         return classes.toArray(new Class[classes.size()]);
     }
 
-    /**
-     * Recursive method used to find all classes in a given directory and subdirs.
-     *
-     * @param directory   The base directory
-     * @param packageName The package name for classes found inside the base directory
-     * @return The classes
-     * @throws ClassNotFoundException
-     */
     private List<Class> findClasses(File directory, String packageName) throws ClassNotFoundException {
         List<Class> classes = new ArrayList<Class>();
         if (!directory.exists()) {
