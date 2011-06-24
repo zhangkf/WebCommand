@@ -39,9 +39,9 @@ public class DispatchServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             String pathInfo = req.getRequestURI();
-            Class handlerClass = commandHandlerLocator.locate(pathInfo);
 
-            Object result = new CommandHandlerInvoker(handlerClass).invokeHandler(req.getMethod(), extractParameters(req));
+            CommandHandlerInvoker commandHandlerInvoker = commandHandlerLocator.locate(pathInfo, req.getMethod());
+            Object result = commandHandlerInvoker.invoke(extractParameters(req));
 
             PrintWriter writer = resp.getWriter();
             writer.println(result);

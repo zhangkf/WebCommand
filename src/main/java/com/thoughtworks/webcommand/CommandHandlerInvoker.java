@@ -1,6 +1,5 @@
 package com.thoughtworks.webcommand;
 
-import com.thoughtworks.webcommand.annotation.RequestMethod;
 import com.thoughtworks.webcommand.annotation.RequestParam;
 import com.thoughtworks.webcommand.exception.MethodNotFoundException;
 import com.thoughtworks.webcommand.exception.ParameterNotFoundException;
@@ -8,6 +7,7 @@ import com.thoughtworks.webcommand.exception.ParameterTypeNotMatchException;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,8 +19,8 @@ class CommandHandlerInvoker {
         this.handlerClass = handlerClass;
     }
 
-    Object invokeHandler(String httpVerb, Map parameterMap) throws Exception {
-        Method method = locateMethod(httpVerb);
+    Object invoke(Map parameterMap) throws Exception {
+        Method method = locateMethod();
 
         Annotation[][] parameterAnnotations = method.getParameterAnnotations();
         Class<?>[] parameterTypes = method.getParameterTypes();
@@ -60,23 +60,18 @@ class CommandHandlerInvoker {
 
         return result;
     }
+    Class getHandlerClass(){
+        return handlerClass;
+    }
 
-    private Method locateMethod(String requestMethod) throws MethodNotFoundException {
-
+    private Method locateMethod() throws MethodNotFoundException {
         Method[] methods = handlerClass.getMethods();
         for (Method method : methods) {
-            if (method.isAnnotationPresent(RequestMethod.class)) {
-                RequestMethod methodAnnotation = method.getAnnotation(RequestMethod.class);
-                String methodName = methodAnnotation.value();
-                if (methodName.equals(requestMethod)) {
-                    return method;
-                }
-
+            if(method.getModifiers()== Modifier.PUBLIC){
+                return method;
             }
         }
 
-        throw new MethodNotFoundException("Method not found for request method: " + requestMethod);
-
-
+        throw new MethodNotFoundException("NO public method defined in handler class "+handlerClass.getName());
     }
 }

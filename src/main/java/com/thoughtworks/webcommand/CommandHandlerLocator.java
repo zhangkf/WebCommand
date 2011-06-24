@@ -1,6 +1,6 @@
 package com.thoughtworks.webcommand;
 
-import com.thoughtworks.webcommand.annotation.RequestMapping;
+import com.thoughtworks.webcommand.annotation.WebCommand;
 
 class CommandHandlerLocator {
     private Class[] handlerClasses;
@@ -9,24 +9,20 @@ class CommandHandlerLocator {
         this.handlerClasses = classes;
     }
 
-    Class locate(String urlPattern) throws ClassNotFoundException {
+    CommandHandlerInvoker locate(String urlPattern, String httpVerb) throws ClassNotFoundException {
 
         for (Class handlerClass : handlerClasses) {
 
-            boolean annotationPresent = handlerClass.isAnnotationPresent(RequestMapping.class);
+            boolean annotationPresent = handlerClass.isAnnotationPresent(WebCommand.class);
 
             if (annotationPresent) {
-                RequestMapping mappingAnnotation = (RequestMapping) handlerClass.getAnnotation(RequestMapping.class);
-                if (mappingAnnotation.uri().equals(urlPattern)) {
-                    return handlerClass;
+                WebCommand mappingAnnotation = (WebCommand) handlerClass.getAnnotation(WebCommand.class);
+                if (mappingAnnotation.uri().equals(urlPattern) && mappingAnnotation.verb().toString().equals(httpVerb.toUpperCase())) {
+                    return new CommandHandlerInvoker(handlerClass);
                 }
-
             }
         }
-
         throw new ClassNotFoundException("No handler register for uri: " + urlPattern);
-
-
     }
 
 }

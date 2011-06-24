@@ -1,137 +1,54 @@
 package com.thoughtworks.webcommand;
 
+import com.thoughtworks.webcommand.exception.ParameterNotFoundException;
+import com.thoughtworks.webcommand.exception.ParameterTypeNotMatchException;
 import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
+import java.util.Hashtable;
+import java.util.Map;
+
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
 public class CommandHandlerInvokerTest {
 
-    private Class[] classes;
+    public CommandHandlerInvoker commandHandlerInvoker;
 
     @Before
-    public void setUp() {
+    public void setUp() throws IOException, ClassNotFoundException {
         String packageName = "com.thoughtworks.webcommand";
-        this.classes = new Class[0];
+        Class[] classes = new CommandHandlerFinder(packageName).getClasses();
+        CommandHandlerLocator commandHandlerLocator = new CommandHandlerLocator(classes);
 
-        try {
-            this.classes = new CommandHandlerFinder(packageName).getClasses();
-
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        commandHandlerInvoker = commandHandlerLocator.locate("/sample", "POST");
     }
 
-//    @Test
-//    public void should_return_method_if_request_method_matched() {
-//        try {
-//            Class handlerClass = new CommandHandlerLocator(this.classes).locate("/sample");
-//            Method method = new CommandHandlerInvoker(handlerClass).locateMethod("GET");
-//            assertThat(method.getName(), is("get"));
-//
-//        } catch (ClassNotFoundException e) {
-//            fail("should find Handler Class");
-//        } catch (MethodNotFoundException e) {
-//            fail("should find get method for GET.");
-//        }
-//
-//    }
-//
-//
-//    @Test
-//    public void should_throw_exception_if_no_method_match_request_method() {
-//        try {
-//            Class handlerClass = new CommandHandlerLocator(this.classes).locate("/sample");
-//            Method method = new CommandHandlerInvoker(handlerClass).locateMethod("FIND");
-//            fail("should throw MethodNotFoundException");
-//
-//        } catch (ClassNotFoundException e) {
-//            fail("should find Handler Class");
-//        } catch (MethodNotFoundException e) {
-//
-//        }
-//
-//    }
-//
-//
-//    @Test
-//    public void should_invoke_if_method_parameters_name_and_type_match() {
-//        try {
-//            Class handlerClass = new CommandHandlerLocator(this.classes).locate("/sample");
-//            CommandHandlerInvoker commandHandlerInvoker = new CommandHandlerInvoker(handlerClass);
-//            Method method = commandHandlerInvoker.locateMethod("GET");
-//
-//            Map<String, String> paramterMap = new Hashtable<String, String>();
-//            paramterMap.put("username", "zhangkf");
-//            paramterMap.put("password", "zhangkf");
-//
-//            assertThat(commandHandlerInvoker.invokeHandler(method, paramterMap).toString(), is("zhangkfzhangkf"));
-//
-//        } catch (ClassNotFoundException e) {
-//            fail("should find Handler Class");
-//        } catch (MethodNotFoundException e) {
-//            fail("should find Handler Method");
-//        } catch (ParameterNotFoundException e) {
-//            fail("should find all request parameters");
-//        } catch (Exception e) {
-//            fail("should invoke properly");
-//        }
-//
-//    }
-//
-//
-//    @Test
-//    public void should_throw_exception_if_method_parameter_names_not_match() {
-//        try {
-//            Class handlerClass = new CommandHandlerLocator(this.classes).locate("/sample");
-//            CommandHandlerInvoker commandHandlerInvoker = new CommandHandlerInvoker(handlerClass);
-//            Method method = commandHandlerInvoker.locateMethod("GET");
-//
-//            Map<String, String> paramterMap = new Hashtable<String, String>();
-//            paramterMap.put("username", "zhangkf");
-//
-//            commandHandlerInvoker.invokeHandler(method, paramterMap);
-//            fail("should throw ParameterNotFoundException");
-//
-//        } catch (ClassNotFoundException e) {
-//            fail("should find Handler Class");
-//        } catch (MethodNotFoundException e) {
-//            fail("should find Handler Method");
-//        } catch (ParameterNotFoundException e) {
-//
-//        } catch (Exception e) {
-//
-//        }
-//
-//    }
-//
-//    @Test
-//    public void should_throw_exception_if_parameter_type_not_match() {
-//        try {
-//            Class handlerClass = new CommandHandlerLocator(this.classes).locate("/sample");
-//            CommandHandlerInvoker commandHandlerInvoker = new CommandHandlerInvoker(handlerClass);
-//            Method method = commandHandlerInvoker.locateMethod("GET");
-//
-//            Map<String, Object> paramterMap = new Hashtable<String, Object>();
-//            paramterMap.put("username", "zhangkf");
-//            paramterMap.put("password", 12345d);
-//
-//            commandHandlerInvoker.invokeHandler(method, paramterMap);
-//            fail("should throw ParameterTypeNotMatchException");
-//
-//        } catch (ClassNotFoundException e) {
-//            fail("should find Handler Class");
-//        } catch (MethodNotFoundException e) {
-//            fail("should find Handler Method");
-//        } catch (ParameterTypeNotMatchException e) {
-//
-//        } catch (Exception e) {
-//
-//        }
-//
-//    }
+    @Test
+    public void should_invoke_if_method_parameters_name_and_type_match() throws Exception {
 
+        Map<String, String> paramterMap = new Hashtable<String, String>();
+        paramterMap.put("username", "username");
+        paramterMap.put("password", "password");
 
+        assertThat(commandHandlerInvoker.invoke(paramterMap).toString(), is("usernamepassword"));
+    }
+
+    @Test(expected = ParameterNotFoundException.class)
+    public void should_throw_exception_if_method_parameter_names_not_match() throws Exception {
+        Map<String, String> paramterMap = new Hashtable<String, String>();
+        paramterMap.put("username", "zhangkf");
+
+        commandHandlerInvoker.invoke(paramterMap);
+    }
+
+    @Test(expected = ParameterTypeNotMatchException.class)
+    public void should_throw_exception_if_parameter_type_not_match() throws Exception {
+        Map<String, Object> paramterMap = new Hashtable<String, Object>();
+        paramterMap.put("username", "zhangkf");
+        paramterMap.put("password", 12345d);
+
+        commandHandlerInvoker.invoke(paramterMap);
+    }
 }
