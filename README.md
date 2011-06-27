@@ -17,17 +17,12 @@ How to use WebCommand?
 
 2. Create your own command handler annotated with RequestMapping, RequestMethod, RequestParam.
 
-`@WebCommand(uri = "/sample", verb= POST)
-
- public class SamplePostCommandHandler {
-
-    public String handle(@RequestParam("username") String username, @RequestParam("password") String password) {
-
+     @WebCommand(uri = "/sample", verb= POST)
+     public class SamplePostCommandHandler {
+         public String handle(@RequestParam("username") String username, @RequestParam("password") String password) {
          // handle the command
-
-    }
-
-}`
+         }
+     }
 
 
 
