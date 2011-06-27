@@ -13,8 +13,11 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Map;
-import java.util.Set;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static javax.servlet.http.HttpServletResponse.SC_BAD_REQUEST;
 
 public class DispatchServlet extends HttpServlet {
 
@@ -24,34 +27,41 @@ public class DispatchServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        initLogger();
         String packages = this.getServletConfig().getInitParameter("package");
-        logger.info("Get package from web.xml:" + packages);
+        logger.info("Get package of commanders from web.xml:" + packages);
         try {
-            Set<Class<?>> handlerClasses = new CommandHandlerFinder(packages).scanPackage();
-            commandHandlerLocator = new CommandHandlerLocator(handlerClasses);
-        } catch (Exception e) {
-            logger.throwing("DispatchServlet", "init", e);
+            commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerFinder(packages));
+        } catch (Throwable e) {
+            logger.log(Level.SEVERE, e.getMessage(), e);
         }
     }
 
+    private void initLogger() {
+        Logger.getLogger("").addHandler(new ConsoleHandler());
+        Logger.getLogger("com.thoughtworks.webcommand").setLevel(Level.INFO);
+    }
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            String pathInfo = req.getRequestURI();
+            String commandUri = req.getPathInfo();
+            logger.info("Serve request for command: "+commandUri);
 
-            CommandHandlerInvoker commandHandlerInvoker = commandHandlerLocator.locate(pathInfo, req.getMethod());
-            Object result = commandHandlerInvoker.invoke(extractParameters(req));
-
+            Object result = commandHandlerLocator.locate(commandUri, req.getMethod()).invoke(extractParameters(req));
             PrintWriter writer = resp.getWriter();
             writer.println(result);
             writer.flush();
 
         } catch (ClassNotFoundException e) {
-            logger.throwing("DispatchServlet", "doGet", e);
+            resp.sendError(SC_BAD_REQUEST, e.getMessage());
+            logger.log(Level.SEVERE,e.getMessage(), e);
         } catch (MethodNotFoundException e) {
-            logger.throwing("DispatchServlet", "doGet", e);
-        } catch (Exception e) {
-            logger.throwing("DispatchServlet", "doGet", e);
+            resp.sendError(SC_BAD_REQUEST, e.getMessage());
+            logger.log(Level.SEVERE, e.getMessage(), e);
+        } catch (Throwable e) {
+            resp.sendError(SC_BAD_REQUEST, e.getMessage());
+            logger.log(Level.SEVERE, e.getMessage(), e);
         }
     }
 

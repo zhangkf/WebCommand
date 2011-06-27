@@ -1,0 +1,7 @@
+//include "webcommand"
+
+apply plugin: 'jetty'
+
+dependencies {
+    compile project(':webcommand')
+}

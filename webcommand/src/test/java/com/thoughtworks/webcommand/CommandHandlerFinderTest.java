@@ -19,7 +19,7 @@ public class CommandHandlerFinderTest {
     }
 
     @Test
-    public void should_return_empty_array_if_no_class_under_package() throws Exception, ClassNotFoundException {
+    public void should_return_empty_array_if_no_class_under_package() throws Exception {
         String packageName = "com.thoughtworks.webcommand.notexist";
         Set<Class<?>> classes = new CommandHandlerFinder(packageName).scanPackage();
 

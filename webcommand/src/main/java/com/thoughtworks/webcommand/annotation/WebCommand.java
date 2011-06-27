@@ -8,7 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface WebCommand {
 
-    String uri() default "/";
+    String uri();
     HttpVerb verb() default HttpVerb.GET;
 
 }

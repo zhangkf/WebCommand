@@ -13,7 +13,7 @@ public class CommandHandlerLocatorTest {
     @Before
     public void setUp() throws Exception {
         String packageName = "com.thoughtworks.webcommand";
-        commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerFinder(packageName).scanPackage());
+        commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerFinder(packageName));
     }
 
     @Test

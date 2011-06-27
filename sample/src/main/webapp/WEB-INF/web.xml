@@ -11,12 +11,12 @@
         <servlet-class>com.thoughtworks.webcommand.DispatchServlet</servlet-class>
         <init-param>
             <param-name>package</param-name>
-            <param-value>com.thoughtworks.webcommand.handler.sample.sample</param-value>
+            <param-value>com.thoughtworks.webcommand.handler.sample</param-value>
         </init-param>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>dispatchServlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/command/*</url-pattern>
     </servlet-mapping>
 </web-app>

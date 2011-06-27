@@ -18,8 +18,7 @@ public class CommandHandlerInvokerTest {
     @Before
     public void setUp() throws Exception {
         String packageName = "com.thoughtworks.webcommand";
-        CommandHandlerLocator commandHandlerLocator = new CommandHandlerLocator(
-                new CommandHandlerFinder(packageName).scanPackage());
+        CommandHandlerLocator commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerFinder(packageName));
 
         commandHandlerInvoker = commandHandlerLocator.locate("/sample", "POST");
     }
