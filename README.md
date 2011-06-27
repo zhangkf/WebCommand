@@ -17,17 +17,15 @@ How to use WebCommand?
 
 2. Create your own command handler annotated with RequestMapping, RequestMethod, RequestParam.
 
-     @WebCommand(uri = "/sample", verb= POST)
-     public class SamplePostCommandHandler {
-         public String handle(@RequestParam("username") String username, @RequestParam("password") String password) {
-         // handle the command
-         }
-     }
-
-
-
+        @WebCommand(uri = "/sample", verb= POST)
+        public class SamplePostCommandHandler {
+            public String handle(@RequestParam("username") String username, @RequestParam("password") String password) {
+            // handle the command
+            }
+        }
 
 Contracts:
+
 1. One command handler should handle one and only one command. So each command handler should have one and only one public method. The name of the method can be variable but it must be public.
 2. You can specify the same uri to different command handler, as long as their _verb_ is different
 
