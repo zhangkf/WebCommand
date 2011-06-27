@@ -31,7 +31,7 @@ public class DispatchServlet extends HttpServlet {
         String packages = this.getServletConfig().getInitParameter("package");
         logger.info("Get package of commanders from web.xml:" + packages);
         try {
-            commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerFinder(packages));
+            commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerScanner(packages));
         } catch (Throwable e) {
             logger.log(Level.SEVERE, e.getMessage(), e);
         }

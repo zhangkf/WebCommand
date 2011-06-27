@@ -10,11 +10,11 @@ import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
-class CommandHandlerFinder {
+class CommandHandlerScanner {
 
     private String packageName;
 
-    CommandHandlerFinder(String packageName) {
+    CommandHandlerScanner(String packageName) {
         this.packageName = packageName;
     }
 

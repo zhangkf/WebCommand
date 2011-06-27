@@ -7,8 +7,8 @@ import java.util.Set;
 class CommandHandlerLocator {
     private Set<Class<?>> handlerClasses;
 
-    CommandHandlerLocator(CommandHandlerFinder commandHandlerFinder) throws Exception {
-        this.handlerClasses = commandHandlerFinder.scanPackage();
+    CommandHandlerLocator(CommandHandlerScanner commandHandlerScanner) throws Exception {
+        this.handlerClasses = commandHandlerScanner.scanPackage();
     }
 
     CommandHandlerInvoker locate(String urlPattern, String httpVerb) throws ClassNotFoundException {

@@ -1,5 +1,6 @@
 package com.thoughtworks.webcommand;
 
+import com.thoughtworks.webcommand.handler.sample.SampleGetCommandHandler;
 import com.thoughtworks.webcommand.handler.sample.SamplePostCommandHandler;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,13 +14,15 @@ public class CommandHandlerLocatorTest {
     @Before
     public void setUp() throws Exception {
         String packageName = "com.thoughtworks.webcommand";
-        commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerFinder(packageName));
+        commandHandlerLocator = new CommandHandlerLocator(new CommandHandlerScanner(packageName));
     }
 
     @Test
-    public void should_return_handler_class_if_url_pattern_matches() throws ClassNotFoundException {
+    public void should_return_handler_class_if_url_pattern_and_verb_matches() throws ClassNotFoundException {
         CommandHandlerInvoker commandHandlerInvoker = commandHandlerLocator.locate("/sample", "POST");
         assertTrue(commandHandlerInvoker.getHandlerClass().equals(SamplePostCommandHandler.class));
+        commandHandlerInvoker = commandHandlerLocator.locate("/sample", "GET");
+        assertTrue(commandHandlerInvoker.getHandlerClass().equals(SampleGetCommandHandler.class));
     }
 
 
@@ -30,7 +33,7 @@ public class CommandHandlerLocatorTest {
 
     @Test(expected = ClassNotFoundException.class)
     public void should_throw_exception_if_handler_match_url_pattern_but_verb_not_match() throws ClassNotFoundException {
-        commandHandlerLocator.locate("/sample", "GET");
+        commandHandlerLocator.locate("/sample", "PUT");
     }
 
 }
