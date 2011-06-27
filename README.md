@@ -1,5 +1,6 @@
 How to use WebCommand?
 1. Configure DispatchServlet in web.xml, with init-param "package"
+
         <servlet>
             <servlet-name>dispatchServlet</servlet-name>
             <servlet-class>com.thoughtworks.webcommand.DispatchServlet</servlet-class>
@@ -15,12 +16,12 @@ How to use WebCommand?
         </servlet-mapping>
 
 2. Create your own command handler annotated with RequestMapping, RequestMethod, RequestParam.
-    `@WebCommand(uri = "/sample", verb= POST)
-    public class SamplePostCommandHandler {
-        public String handle(@RequestParam("username") String username, @RequestParam("password") String password) {
-             // handle the command
-        }
-    }`
+`@WebCommand(uri = "/sample", verb= POST)
+ public class SamplePostCommandHandler {
+    public String handle(@RequestParam("username") String username, @RequestParam("password") String password) {
+         // handle the command
+    }
+}`
 
 
 
