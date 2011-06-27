@@ -1,22 +1,27 @@
 How to use WebCommand?
 1. Configure DispatchServlet in web.xml, with init-param "package"
-	    <servlet>
-        <servlet-name>dispatchServlet</servlet-name>
-        <servlet-class>com.thoughtworks.webcommand.DispatchServlet</servlet-class>
+        <servlet>
+            <servlet-name>dispatchServlet</servlet-name>
+            <servlet-class>com.thoughtworks.webcommand.DispatchServlet</servlet-class>
         <init-param>
             <param-name>package</param-name>
             <param-value>com.thoughtworks.webcommand.handler.sample</param-value>
         </init-param>
-		</servlet>
+        </servlet>
 
-		<servlet-mapping>
-			<servlet-name>dispatchServlet</servlet-name>
-			<url-pattern>/command/*</url-pattern>
-		</servlet-mapping>
+        <servlet-mapping>
+        <servlet-name>dispatchServlet</servlet-name>
+           <url-pattern>/command/*</url-pattern>
+        </servlet-mapping>
 
 2. Create your own command handler annotated with RequestMapping, RequestMethod, RequestParam.
-3. Put command handler into the package or subpackage configured in DispatchServlet init-param
-4. Check SampleCommandhandler as example.
+    @WebCommand(uri = "/sample", verb= POST)
+    public class SamplePostCommandHandler {
+        public String handle(@RequestParam("username") String username, @RequestParam("password") String password) {
+            return username + password;
+        }
+    }
+
 
 
 
