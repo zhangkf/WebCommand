@@ -26,12 +26,12 @@ How to use WebCommand?
 
 Contracts:
 
-1. One command handler should handle one and only one command. So each command handler should have one and only one public method. The name of the method can be variable but it must be public.
-2. You can specify the same uri to different command handler, as long as their _verb_ is different
+1.  One command handler should handle one and only one command. So each command handler should have one and only one public method. The name of the method can be variable but it must be public.
+2.  You can specify the same uri to different command handler, as long as their _verb_ is different
 
 
 TODO:
-1. Configure multiple packages in web.xml
-2. Throw exception when multiple command handlers annotated with same RequestMapping
-3. Default method will be invoked in command handle if no corresponding method exists.
-4.
+
+1.  Configure multiple packages in web.xml
+2.  Throw exception when multiple command handlers annotated with same RequestMapping
+3.  Default method will be invoked in command handle if no corresponding method exists.
