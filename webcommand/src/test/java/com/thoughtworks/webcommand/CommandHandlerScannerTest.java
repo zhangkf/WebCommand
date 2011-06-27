@@ -13,8 +13,9 @@ public class CommandHandlerScannerTest {
         String packageName = "com.thoughtworks.webcommand.handler";
         Set<Class<?>> classes = new CommandHandlerScanner(packageName).scanPackage();
 
-        assertThat(classes.size(), is(1));
+        assertThat(classes.size(), is(2));
         assertThat(((Class)classes.toArray()[0]).getName(), is("com.thoughtworks.webcommand.handler.sample.SamplePostCommandHandler"));
+        assertThat(((Class)classes.toArray()[1]).getName(), is("com.thoughtworks.webcommand.handler.sample.SampleGetCommandHandler"));
 
     }
 

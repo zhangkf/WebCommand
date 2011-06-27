@@ -7,7 +7,7 @@ subprojects {
        mavenCentral()
     }
     sourceCompatibility = 1.6
-    version = '1.0'
+    version = '0.2'
     jar {
         manifest {
             attributes 'Implementation-Title': 'WebCommand', 'Implementation-Version': version
